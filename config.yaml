@@ -16,7 +16,7 @@ params:
     address:
       - city: City, ST 00000
         country: United Kingdom
-        street: Street
+        street: London Business School
         title: Address
     buttonClear: Clear
     buttonSend: Send message
