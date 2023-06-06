@@ -1,6 +1,6 @@
 baseURL: https://jacquiswebsite.netlify.app/
 languageCode: en-us
-title: Forty
+title: London Business School Website for Jacqui Cole
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -10,11 +10,11 @@ params:
     subtitle: |-
       A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Jacqui Cole
+    title: Welcome to my website about Data Science for Business with R 
   blog: {}
   contact:
     address:
-      - city: London, NW1 hello 
+      - city: London, NW1 4SA 
         country: United Kingdom
         street: Regent's park
         title: London Business School
@@ -25,7 +25,7 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: (000) 000-0000 x1234
+      - phone: +44 (0)20 7000 7000
         title: Phone
   custom_css: []
   custom_js: []
