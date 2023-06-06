@@ -14,7 +14,7 @@ params:
   blog: {}
   contact:
     address:
-      - city: London, NW1 hi 
+      - city: London, NW1 hello 
         country: United Kingdom
         street: Regent's park
         title: London Business School
