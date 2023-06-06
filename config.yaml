@@ -10,8 +10,9 @@ params:
     subtitle: |-
       A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Welcome to my website about Data Science for Business with R 
-  blog: {}
+    title: Data Science for Business with R
+  blog: {Welcome to London Business School. I am an Executive MBA student 
+  interested in applying data analytics to business.}
   contact:
     address:
       - city: London, NW1 4SA 
