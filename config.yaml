@@ -85,11 +85,11 @@ params:
       - image: Rhubimage.jpg
         subtitle: Coding Fun with R
         title: R Hub
-        url: blogs/risk-return
+        url: blogs/blog1.md
       - image: machine-learning-image.jpeg
         subtitle: Machine Learning Fun with R
         title: ML Hub 
-        url: blogs/homework4
+        url: blogs/blog2.md
       - image: worldbusiness.jpg
         subtitle: Data Analytics for Global Business
         title: Business Hub
