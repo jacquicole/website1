@@ -82,11 +82,11 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: Rhubimage.jpg
+      - image: /Rhubimage.jpg
         subtitle: Coding Fun with R
         title: R Hub
         url: blogs/aliquam
-      - image: machine-learning-image.jpeg
+      - image: /machine-learning-image.jpeg
         subtitle: Machine Learning Fun with R
         title: Tempus
         url: blogs/tempus
