@@ -3,10 +3,15 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:26:09-05:00"
-description: Lorem Etiam Nullam
+description: Here is a cool exercise on machine learning with R
 draft: false
-image: pic09.jpg
+image: machine-learning-image.jpeg
 keywords: ""
-slug: magna
-title: Magna
+slug: homework4
+title: Machine Learning with R
 ---
+
+
+
+
+
