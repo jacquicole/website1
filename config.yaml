@@ -90,21 +90,21 @@ params:
         subtitle: Machine Learning Fun with R
         title: ML Hub 
         url: blogs/tempus
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
+      - image: worldbusiness.jpg
+        subtitle: Data Analytics for Global Business
+        title: Business Hub
         url: blogs/magna
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
+      - image: analytics.jpg
+        subtitle: Data Manipulation Fun with R
+        title: Data Analytics Hub
         url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
+      - image: databases.jpg
+        subtitle: Databases and Webscraping Fun with R
+        title: Databases Hub
         url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
+      - image: datavisualisation.jpg
+        subtitle: Data Visualisation Fun with R
+        title: Visualisation Hub
         url: blogs/ipsum
   two:
     buttonText: Get Started
