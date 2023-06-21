@@ -10,9 +10,9 @@ params:
     subtitle: |-
       WELCOME TO LONDON BUSINESS SCHOOL. I AM AN EXECUTIVE MBA STUDENT
       INTERESTED IN APPLYING DATA ANALYTICS TO BUSINESS.
-    title: Jacqui's Hub for Data Science for Business with R
+    title: Jacqui's Hub for Data Science with R
   blog: {Welcome to London Business School. I am an Executive MBA student 
-  interested in applying data analytics to business.}
+  interested in applying data analytics to business using R.}
   contact:
     address:
       - city: London, NW1 4SA 
@@ -41,7 +41,7 @@ params:
     quicklinks:
       - alt: LBS
         text: 'London Business School'
-        url: https://www.london.edu
+        url: http://www.london.edu
     social:
       - icon: fa-twitter
         label: Twitter
@@ -77,14 +77,14 @@ params:
       - name: Elements
         url: elements.html
     menu: Menu
-    subtitle: By HTML5 Up
-    title: Forty
+    subtitle: Data Science with R
+    title: LBS
   tiles:
     enable: yes
     showcase:
       - image: pic01.jpg
         subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
+        title: Testing1,2,3
         url: blogs/aliquam
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
