@@ -22,7 +22,7 @@ params:
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: jcole@london.edu
+      - email: jcole.embals2023@london.edu
         title: Email
     enable: yes
     phone:
@@ -30,7 +30,7 @@ params:
         title: Phone
   custom_css: []
   custom_js: []
-  description: Your description
+  description: Hello world
   error404:
     heading: Page couldn't be found
     text: Please visit [this page](/)
