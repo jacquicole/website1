@@ -93,11 +93,11 @@ params:
       - image: worldbusiness.jpg
         subtitle: Data Analytics for Global Business
         title: Business Hub
-        url: blogs/blogs3
+        url: blogs/blog3
       - image: analytics.jpg
         subtitle: Data Manipulation Fun with R
         title: Data Analytics Hub
-        url: blogs/ipsum
+        url: blogs/blog4
       - image: databases.jpg
         subtitle: Databases and Webscraping Fun with R
         title: Databases Hub

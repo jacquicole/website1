@@ -5,7 +5,7 @@ description: A classification problem
 draft: no
 image: "machine-learning-image.jpg"
 keywords: ''
-slug: homework4
+slug: blog2
 categories:
 - ''
 - ''
