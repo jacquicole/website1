@@ -82,12 +82,12 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Testing1,2,3
+      - image: Rhubimage.jpg
+        subtitle: Coding Fun with R
+        title: R Hub
         url: blogs/aliquam
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
+      - image: machine-learning-image.jpeg
+        subtitle: Machine Learning Fun with R
         title: Tempus
         url: blogs/tempus
       - image: pic03.jpg
