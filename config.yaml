@@ -85,10 +85,10 @@ params:
       - image: Rhubimage.jpg
         subtitle: Coding Fun with R
         title: R Hub
-        url: blogs/aliquam
+        url: blogs/funwithR
       - image: machine-learning-image.jpeg
-        subtitle: Machine Learning Fun with R
-        title: Tempus
+        subtitle: ML Hub
+        title: Machine Learning Fun with R
         url: blogs/tempus
       - image: pic03.jpg
         subtitle: Lorem Etiam Nullam
