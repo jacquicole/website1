@@ -2,13 +2,13 @@
 categories:
 - ""
 - ""
-date: "2017-10-31T21:28:43-05:00"
-description: databases et al
+date: "2023-06-22"
+description: Creating and Using Databases with R
 draft: false
-image: Rhubimage.jpg
+image: databases.jpg
 keywords: ""
 slug: bloge
-title: databases
+title: Database Exercises
 ---
 
 
@@ -80,7 +80,7 @@ payments %>%
 
 ```
 ## # Source:     SQL [?? x 8]
-## # Database:   sqlite 3.41.2 [/Users/kostis/Desktop/jacquie/data/sky-westminster-files.db]
+## # Database:   sqlite 3.41.2 [C:\Users\jcole\dsb2023\website1\data\sky-westminster-files.db]
 ## # Ordered by: desc(maxvalue)
 ##    member_id maxvalue name        gender constituency party_id short_name status
 ##    <chr>        <dbl> <chr>       <chr>  <chr>        <chr>    <chr>      <chr> 
@@ -195,7 +195,7 @@ payments %>%
 
 ```
 ## # Source:   SQL [1 x 1]
-## # Database: sqlite 3.41.2 [/Users/kostis/Desktop/jacquie/data/sky-westminster-files.db]
+## # Database: sqlite 3.41.2 [C:\Users\jcole\dsb2023\website1\data\sky-westminster-files.db]
 ##   Unique_Elements
 ##             <int>
 ## 1            2213
@@ -208,7 +208,7 @@ payments %>%
 
 ```
 ## # Source:   SQL [1 x 1]
-## # Database: sqlite 3.41.2 [/Users/kostis/Desktop/jacquie/data/sky-westminster-files.db]
+## # Database: sqlite 3.41.2 [C:\Users\jcole\dsb2023\website1\data\sky-westminster-files.db]
 ##   Unique_Elements
 ##             <int>
 ## 1             595
@@ -245,7 +245,7 @@ payments %>%
     ```
     ## Rows: ??
     ## Columns: 23
-    ## Database: sqlite 3.41.2 [/Users/kostis/Desktop/jacquie/data/sky-westminster-files.db]
+    ## Database: sqlite 3.41.2 [C:\Users\jcole\dsb2023\website1\data\sky-westminster-files.db]
     ## $ category             <chr> "4. Visits outside the UK", "2. (b) Any other sup…
     ## $ category_name        <chr> "Gifts and other benefits", "Cash donations", "Gi…
     ## $ charity              <chr> "", "", "", "", "", "", "", "", "", "", "", "", "…
@@ -282,7 +282,7 @@ payments %>%
     
     ```
     ## # Source:   SQL [1 x 1]
-    ## # Database: sqlite 3.41.2 [/Users/kostis/Desktop/jacquie/data/sky-westminster-files.db]
+    ## # Database: sqlite 3.41.2 [C:\Users\jcole\dsb2023\website1\data\sky-westminster-files.db]
     ##   Unique_Elements
     ##             <int>
     ## 1              13
@@ -297,7 +297,7 @@ payments %>%
     
     ```
     ## # Source:   SQL [1 x 1]
-    ## # Database: sqlite 3.41.2 [/Users/kostis/Desktop/jacquie/data/sky-westminster-files.db]
+    ## # Database: sqlite 3.41.2 [C:\Users\jcole\dsb2023\website1\data\sky-westminster-files.db]
     ##   Unique_Elements
     ##             <int>
     ## 1             595
