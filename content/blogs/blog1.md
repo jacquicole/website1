@@ -8,7 +8,7 @@ draft: false
 #image: Rhubimage.jpg
 keywords: ""
 slug: blog1
-#title: Code with R
+title: Code with R
 ---
 
 If you have ever coded in other programming languages, then you will appreciate the great benefits of R (or if you are lucky to have chosen your first language to be R, then congratulations - look no further!). Here are a few key benefits of R:
