@@ -24,7 +24,7 @@ categories:
 
 Next, let's choose the [Dow Jones Industrial Average (DJIA)](https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average) stocks and their ticker symbols and download some data. Besides the thirty stocks that make up the DJIA, we will also add `SPY` which is an SP500 ETF (Exchange Traded Fund).
 
-We will use the `rvest` package to scrape the Wikipedia page for the constituents of DJIA
+We will use the `rvest` package to scrape the Wikipedia page for the constituents of DJIA 
 
 
 ```r

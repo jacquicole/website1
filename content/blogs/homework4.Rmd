@@ -3,30 +3,14 @@ title: "Machine Learning Exercise"
 date: "2023-06-21"
 description: A classification problem
 draft: no
-image: "machine-learning-image.jpg"
+image: machine-learning-image.jpg
 keywords: ''
 slug: blog2
 categories:
 - ''
 - ''
 ---
-#---
-#title: 'Homework 4: Machine Learning'
-#author: "Jacqui Cole"
-#date: "`r Sys.Date()`"
-#output:
-#  word_document:
-#    toc: yes
-#  pdf_document:
-#    toc: yes
-#  html_document:
-#    theme: flatly
-#    highlight: zenburn
-#    number_sections: yes
-#    toc: yes
-#    toc_float: yes
-#    code_folding: show
-#---
+
 
 ```{r}
 #| label: load-libraries
@@ -116,8 +100,11 @@ bechdel_train %>% #read in training dataset of movies
   count(test) %>% #calculate proportion of movies that fail/pass the test
   mutate(percentfail = 100*n/sum(n)) #calculate corresponding percentage
 
-#The training data set has the following counts and proportion of Fail/Pass:
+
 ```
+
+The training data set has the following counts and proportion of Fail/Pass:
+
 
 ```{r}
 bechdel_test %>% #read in test dataset of movies
@@ -151,22 +138,26 @@ bechdel %>%
 
 ```
 
+There are no massive outliers, although the maximum value of budget 2013 seems to be disproportionately larger than others. So I find the maximum value of this outlier:
+
 ```{r}
 
-#There are no massive outliers, although the maximum value of budget 2013 seems to be disproportionately larger than others. So I find the maximum value of this outlier:
+
  bechdel %>%
   summarise(maxi = max(budget_2013)) 
  
 ```
 
-```{r}
-#The identity of this outlier is deduced by:
+The identity of this outlier is deduced by:
 
+```{r}
  bechdel %>%
  filter (budget_2013 > 46)    
- 
-#The outlier is Avatar. I note that its domestic gross (domgross_2013 is also the maximum value of that field (302), but it is not the max value of the intgross (although it is high at 82.5)). Overall, when considered over the full range of the variables plotted in the above boxplots, it is not an outlier in all regards. So, I keep it in the dataset in going forward. Though I just note its disproportionately large value for a few of its variables.
+
 ```
+
+The outlier is Avatar. I note that its domestic gross (domgross_2013 is also the maximum value of that field (302), but it is not the max value of the intgross (although it is high at 82.5)). Overall, when considered over the full range of the variables plotted in the above boxplots, it is not an outlier in all regards. So, I keep it in the dataset in going forward. Though I just note its disproportionately large value for a few of its variables.
+
 
 ## Scatterplot - Correlation Matrix
 
@@ -178,33 +169,37 @@ bechdel %>%
   ggpairs(aes(colour=test), alpha=0.2)+
   theme_bw()
 
-#The output of the following correlation matrix tests reveal that:
-#(a) the variables have quite different distributions 
-#- metascore is somewhere between a trianglular and normal distribution;
-#- imbb_rating appears to be a fairly normal distribution albeit with a small left skew;
-#-the budget_2013, domgross_2013 and intgross_2013 variables show a near Voigt function that is cut off on the left and which is highly right skewed, as most data are of low values.
-#(b) The test data (Fail and Pass) seem to be fairly even in number and the distribution of Fail and Pass data, as judged by the similar profiles showing in the plots that comprise the left hand column below the test histogram. This evenness is important because it shows that the test data are balanced when it comes to a machine-learning application. A corrolaary to this is t also shows that a random partitioning of the data into a training and testing dataset should result in a balanced set of split datasets.
-#(c) The correlation values for the total datasets (in black font) show that there are significant levels of correlation between the following variables:
-#
-#  52% correlation between domgross_2013 and budget_2013
-#  62% correlation between intgross_2013 and budget_2013
-#  94% correlation between intgross_2013 and domgross_2013
-#  74% correlation between metascore and imdb_rating
-#
-# This makes intuitive sense because one would hope that the larger the budget for a film, the more that the film will profit in both domestic and international gross. As a corrolary, one would expect a correlation between domestic and international gross, assuming that most films are international (as hollywood films tend to be).
-#
-# Meanwhile, one would intuitively expect there to be a correlation in ratings: the imdb_rating and the metascore in this case.
-#
-# Note that there are no correlations between the scoring-based variables and the budget variable, which means that the audience appreciation level is independent of the budget spent on the film!
-#
-# These ratings are slightly correlated to the gross profits of the films which suggests that customers choose to see big budget films a bit more than others, perhaps expecting a good experience. However, the lack of correlation between ratings and budget suggest that the audience is occasionally let down by a big budget film.
-#
-# There is little variation between the correlations of the total data versus those that Pass or Fail these 3 criteria. However, there are a few observable differences: e.g. domgross_2013 and budget_2013 are slightly less correlated if the criteria are not met (Fail) and slightly more correlated if the criteria are met. 
-# There is also a slightly lower correlation between film ratings/scores and gross profits of films if the criteria are met (Pass) than if they are not met (Fail).
-# 
-#This all means that there appears to be a modest but statistically significant relationship in movies and these criteria being met.
-
 ```
+
+The output of the following correlation matrix tests reveal that:
+
+(a) the variables have quite different distributions
+- metascore is somewhere between a trianglular and normal distribution;
+- imbb_rating appears to be a fairly normal distribution albeit with a small left skew;
+-the budget_2013, domgross_2013 and intgross_2013 variables show a near Voigt function that is cut off on the left and which is highly right skewed, as most data are of low values.
+
+(b) The test data (Fail and Pass) seem to be fairly even in number and the distribution of Fail and Pass data, as judged by the similar profiles showing in the plots that comprise the left hand column below the test histogram. This evenness is important because it shows that the test data are balanced when it comes to a machine-learning application. A corrolaary to this is t also shows that a random partitioning of the data into a training and testing dataset should result in a balanced set of split datasets.
+
+(c) The correlation values for the total datasets (in black font) show that there are significant levels of correlation between the following variables:
+
+- 52% correlation between domgross_2013 and budget_2013
+- 62% correlation between intgross_2013 and budget_2013
+- 94% correlation between intgross_2013 and domgross_2013
+- 74% correlation between metascore and imdb_rating
+
+This makes intuitive sense because one would hope that the larger the budget for a film, the more that the film will profit in both domestic and international gross. As a corrolary, one would expect a correlation between domestic and international gross, assuming that most films are international (as hollywood films tend to be).
+
+Meanwhile, one would intuitively expect there to be a correlation in ratings: the imdb_rating and the metascore in this case.
+
+Note that there are no correlations between the scoring-based variables and the budget variable, which means that the audience appreciation level is independent of the budget spent on the film!
+
+These ratings are slightly correlated to the gross profits of the films which suggests that customers choose to see big budget films a bit more than others, perhaps expecting a good experience. However, the lack of correlation between ratings and budget suggest that the audience is occasionally let down by a big budget film.
+
+There is little variation between the correlations of the total data versus those that Pass or Fail these 3 criteria. However, there are a few observable differences: e.g. domgross_2013 and budget_2013 are slightly less correlated if the criteria are not met (Fail) and slightly more correlated if the criteria are met.
+There is also a slightly lower correlation between film ratings/scores and gross profits of films if the criteria are met (Pass) than if they are not met (Fail).
+
+This all means that there appears to be a modest but statistically significant relationship in movies and these criteria being met.
+
 
 ## Categorical variables
 
@@ -222,16 +217,18 @@ bechdel %>%
   summarise(n = n()) %>% 
   mutate(prop = n/sum(n))
 
-#
-# This output shows that a greater proportion of movies meet the #aforementioned
-# three criteria whatever the movie rating. However, the proportion differs depending upon the rating: whereby there are two ratings with notable differences between Pass/Fail:
 
-#a G rating shows a significantly higher proportion (62:38) of movies that fail these criteria; perhaps this is because many animations would fall into the G rating category which don't so often have gender specific characters portrayed. 
-#
-#a NC-17 rating whereby such movies are categorised as showing highly sexualised content. This has the highest (by some margin) disparity between proportions (83:17) of movies that fail the subject criteria. That said, this category contains the least number of movies (6 in total) so one could argue that the sample is too small; although 5:1 is still compelling given the distinctive categorisation of the movie rating and how this aligns with the female focused nature of the criteria.
-#
-#The other ratings have only a modest difference between Fail/Pass in the criteria with a representative (large) number of movies in the sample (the largest disparity amongst all 3 rating types (R, PG-13, PG)) being 56:44
 ```
+
+This output shows that a greater proportion of movies meet the aforementioned
+three criteria whatever the movie rating. However, the proportion differs depending upon the rating: whereby there are two ratings with notable differences between Pass/Fail:
+
+- a G rating shows a significantly higher proportion (62:38) of movies that fail these criteria; perhaps this is because many animations would fall into the G rating category which don't so often have gender specific characters portrayed.
+
+- a NC-17 rating whereby such movies are categorised as showing highly sexualised content. This has the highest (by some margin) disparity between proportions (83:17) of movies that fail the subject criteria. That said, this category contains the least number of movies (6 in total) so one could argue that the sample is too small; although 5:1 is still compelling given the distinctive categorisation of the movie rating and how this aligns with the female focused nature of the criteria.
+
+The other ratings have only a modest difference between Fail/Pass in the criteria with a representative (large) number of movies in the sample (the largest disparity amongst all 3 rating types (R, PG-13, PG)) being 56:44
+
 
 # Train first models. `test ~ metascore + imdb_rating`
 
@@ -889,25 +886,3 @@ last_fit_xgb %>%
 #
 # The overall confusion matrix shown above, for the results of applying the test data to the trained model, discriminates best for when the criteria Fail, which makes sense since more Fail than Pass. The corresponding ROC curve is certainly not perfect but it is considerably better than those that were shown for the evaluation results from some of the training models that were explored, and the gradient boosting model is much better than the case of random guessing (or a guess based on a naive model based on the simple proportioning of the data).  
 ```
-
-# Deliverables
-
-There is a lot of explanatory text, comments, etc. You do not need these, so delete them and produce a stand-alone document that you could share with someone. Knit the edited and completed R Markdown (Rmd) file as a Word or HTML document (use the "Knit" button at the top of the script editor window) and upload it to Canvas. You must be commiting and pushing your changes to your own Github repo as you go along.
-
-# Details
-
--   Who did you collaborate with: No-one, except that I sought advice from Kostis to understand what was required for the final exercise and then we went through that together in class (using 2-fold cross validation as a quick test). I subsequently re-ran this exercise with the full 10-fold cross validation and added my interpretation of the results for this last exercise.
--   Approximately how much time did you spend on this problem set: The full time of workshop 4 as well as 6 more hours of personal time in working on the problem and understanding the underpinning methods and analysis and interpretation.
--   What, if anything, gave you the most trouble: The biggest struggle was the find the questions, as there was a lot of pre-prepared code in which the questions were embedded. I hope that I found all of the questions. I also needed to check my english comprehension of a few of the questions as a few seemed to be ambiguous to me; once I understood what was required in terms of the question, I was fine. I also needed to check wherefrom all the extra code came, e.g. in the last exercise. Once I had worked out that, everything made sense and all was fine from a coding and data interpretation perspective.
-
-**Please seek out help when you need it,** and remember the [15-minute rule](https://dsb2023.netlify.app/syllabus/#the-15-minute-rule){target="_blank"}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!
-
-> As a true test to yourself, do you understand the code you submitted and are you able to explain it to someone else?
-
-# Rubric
-
-13/13: Problem set is 100% completed. Every question was attempted and answered, and most answers are correct. Code is well-documented (both self-documented and with additional comments as necessary). Used tidyverse, instead of base R. Graphs and tables are properly labelled. Analysis is clear and easy to follow, either because graphs are labeled clearly or you've written additional text to describe how you interpret the output. Multiple Github commits. Work is exceptional. I will not assign these often.
-
-8/13: Problem set is 60--80% complete and most answers are correct. This is the expected level of performance. Solid effort. Hits all the elements. No clear mistakes. Easy to follow (both the code and the output). A few Github commits.
-
-5/13: Problem set is less than 60% complete and/or most answers are incorrect. This indicates that you need to improve next time. I will hopefully not assign these often. Displays minimal effort. Doesn't complete all components. Code is poorly written and not documented. Uses the same type of plot for each graph, or doesn't use plots appropriate for the variables being analyzed. No Github commits.

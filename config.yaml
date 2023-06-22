@@ -93,7 +93,7 @@ params:
       - image: worldbusiness.jpg
         subtitle: Data Analytics for Global Business
         title: Business Hub
-        url: blogs/blog3
+        url: blogs/blog3 # there's no blog3 anymore... 
       - image: analytics.jpg
         subtitle: Data Manipulation Fun with R
         title: Data Analytics Hub
@@ -101,14 +101,21 @@ params:
       - image: databases.jpg
         subtitle: Databases and Webscraping Fun with R
         title: Databases Hub
-        url: blogs/ipsum
+        url: blogs/bloge #i wanted to make it blog 3, buttyped bloge... oh well
       - image: datavistile.jpg
         subtitle: Data Visualisation Fun with R
         title: Visualisation Hub
-        url: blogs/ipsum
+        url: blogs/risk_return
   two:
     buttonText: Helpful Links
     enable: yes
     subtitle: "Resources about Data Science for R"
     title: Helpful Links
     url: blogs
+    
+    
+markup: 
+  goldmark: 
+    renderer: 
+      unsafe: true
+      

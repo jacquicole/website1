@@ -1,25 +1,14 @@
 ---
-title: "Data Analytics with R"
-date: "2023-06-21"
-description: "Some fascinating data manipulation exercises in R"
-draft: no
-image: Rhubimage.jpg
-keywords: ''
-slug: blog4
 categories:
-- ''
-- ''
-------
-title: "Homework 1"
-author: "Jacqui Cole"
-date: 2023-05-14
-format: 
-  docx: default
-  html:
-    toc: true
-    toc_float: true
-    code-fold: true
-editor: visual
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: Some fascinating data manipulation exercises in R
+draft: false
+image: Rhubimage.jpg
+keywords: ""
+slug: blog4
+title: Code with R
 ---
 
 ```{r}
@@ -476,21 +465,21 @@ The age gaps dataset includes "gender" columns, which always contain the values 
 
 The following is a data dictionary of the variables used
 
-| variable            | class     | description                                                                                             |
-|:-----------|:-----------|:-----------------------------------------------|
-| movie_name          | character | Name of the film                                                                                        |
-| release_year        | integer   | Release year                                                                                            |
-| director            | character | Director of the film                                                                                    |
-| age_difference      | integer   | Age difference between the characters in whole years                                                    |
-| couple_number       | integer   | An identifier for the couple in case multiple couples are listed for this film                          |
-| actor_1\_name       | character | The name of the older actor in this couple                                                              |
-| actor_2\_name       | character | The name of the younger actor in this couple                                                            |
-| character_1\_gender | character | The gender of the older character, as identified by the person who submitted the data for this couple   |
-| character_2\_gender | character | The gender of the younger character, as identified by the person who submitted the data for this couple |
-| actor_1\_birthdate  | date      | The birthdate of the older member of the couple                                                         |
-| actor_2\_birthdate  | date      | The birthdate of the younger member of the couple                                                       |
-| actor_1\_age        | integer   | The age of the older actor when the film was released                                                   |
-| actor_2\_age        | integer   | The age of the younger actor when the film was released                                                 |
+| variable           | class     | description                                                                                             |
+|:--------------|:--------------|:------------------------------------------|
+| movie_name         | character | Name of the film                                                                                        |
+| release_year       | integer   | Release year                                                                                            |
+| director           | character | Director of the film                                                                                    |
+| age_difference     | integer   | Age difference between the characters in whole years                                                    |
+| couple_number      | integer   | An identifier for the couple in case multiple couples are listed for this film                          |
+| actor_1_name       | character | The name of the older actor in this couple                                                              |
+| actor_2_name       | character | The name of the younger actor in this couple                                                            |
+| character_1_gender | character | The gender of the older character, as identified by the person who submitted the data for this couple   |
+| character_2_gender | character | The gender of the younger character, as identified by the person who submitted the data for this couple |
+| actor_1_birthdate  | date      | The birthdate of the older member of the couple                                                         |
+| actor_2_birthdate  | date      | The birthdate of the younger member of the couple                                                       |
+| actor_1_age        | integer   | The age of the older actor when the film was released                                                   |
+| actor_2_age        | integer   | The age of the younger actor when the film was released                                                 |
 
 ```{r}
 
@@ -561,8 +550,7 @@ How would you explore this data set? Here are some ideas of tables/ graphs to he
 
 -   The `half plus seven\` rule. Large age disparities in relationships carry certain stigmas. One popular rule of thumb is the [half-your-age-plus-seven](https://en.wikipedia.org/wiki/Age_disparity_in_sexual_relationships#The_.22half-your-age-plus-seven.22_rule) rule. This rule states you should never date anyone under half your age plus seven, establishing a minimum boundary on whom one can date. In order for a dating relationship to be acceptable under this rule, your partner's age must be:
 
-$$\frac{\text{Your age}}{2} + 7 \< \text{Partner Age} \< (\text{Your age} - 7) \* 2$$
-How frequently does this rule apply in this dataset?
+$$\frac{\text{Your age}}{2} + 7 \< \text{Partner Age} \< (\text{Your age} - 7) \* 2$$ How frequently does this rule apply in this dataset?
 
 -   Which movie has the greatest number of love interests?
 -   Which actors/ actresses have the greatest number of love interests in this dataset?
@@ -583,7 +571,7 @@ There is a lot of explanatory text, comments, etc. You do not need these, so del
 
 -   What, if anything, gave you the most trouble: the English comprehension of what the questions expected of me were the hardest. Once I knew what the question wanted, I could work it through pretty straight-forwardly. I found the multi-options of the ggplot pretty time consuming as there are so many options.
 
-**Please seek out help when you need it,** and remember the [15-minute rule](https://mam2022.netlify.app/syllabus/#the-15-minute-rule){target="\_blank"}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!
+**Please seek out help when you need it,** and remember the [15-minute rule](https://mam2022.netlify.app/syllabus/#the-15-minute-rule){target="_blank"}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!
 
 > As a true test to yourself, do you understand the code you submitted and are you able to explain it to someone else?
 

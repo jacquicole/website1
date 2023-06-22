@@ -1,19 +1,14 @@
 ---
-title: 'Homework 3: Databases, web scraping, and a basic Shiny app'
-author: "Jacqui Cole"
-date: "`r Sys.Date()`"
-output:
-  word_document:
-    toc: yes
-  pdf_document:
-    toc: yes
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
+categories:
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: databases et al
+draft: false
+image: Rhubimage.jpg
+keywords: ""
+slug: bloge
+title: databases
 ---
 
 ```{r}
@@ -357,74 +352,6 @@ Finally, when you are done working with the databse, make sure you close the con
 
 ```{r}
 dbDisconnect(sky_westminster) #disconnecting from the database
-```
-
-# Anonymised Covid patient data from the CDC
-
-We will be using a dataset with [anonymous Covid-19 patient data that the CDC publishes every month](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4). The file we will use was released on April 11, 2023, and has data on 98 million of patients, with 19 features. This file cannot be loaded in memory, but luckily we have the data in `parquet` format and we will use the `{arrow}` package.
-
-## Obtain the data
-
-The dataset `cdc-covid-geography` in in `parquet` format that {arrow}can handle. It is \> 600Mb and too large to be hosted on Canvas or Github, so please download it from dropbox <https://www.dropbox.com/sh/q1yk8mmnbbrzavl/AAAxzRtIhag9Nc_hODafGV2ka?dl=0> and save it in your `dsb` repo, under the `data` folder
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-
-tic() # start timer
-cdc_data <- open_dataset(here::here("data", "cdc-covid-geography"))
-toc() # stop timer
-
-#This dataset could be read in BUT my computer was out of memory when it tried to show a 'glimpse' of the data. So I have commented out the glimpse command below and I thus can't work on this dataset.
-#
-#FYI, the error that I obtain by using the command:
-#
-#glimpse(cdc_data)
-#
-# is : Error: Out of memory: realloc of size 268435456 failed 
-#
-```
-
-Can you query the database and replicate the following plot?
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "covid-CFR-ICU.png"), error = FALSE)
-```
-
-The previous plot is an aggregate plot for all three years of data. What if we wanted to plot Case Fatality Ratio (CFR) over time? Write code that collects the relevant data from the database and plots the following
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "cfr-icu-overtime.png"), error = FALSE)
-```
-
-For each patient, the dataframe also lists the patient's states and county [FIPS code](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code). The CDC also has information on the [NCHS Urban-Rural classification scheme for counties](https://www.cdc.gov/nchs/data_access/urban_rural.htm)
-
-```{r}
-urban_rural <- read_xlsx(here::here("data", "NCHSURCodes2013.xlsx")) %>% 
-  janitor::clean_names() 
-```
-
-Each county belongs in seix diffent categoreis, with categories 1-4 being urban areas and categories 5-6 being rural, according to the following criteria captured in `x2013_code`
-
-Category name
-
-1.  Large central metro - 1 million or more population and contains the entire population of the largest principal city
-2.  large fringe metro - 1 million or more poulation, but does not qualify as 1
-3.  Medium metro - 250K - 1 million population
-4.  Small metropolitan population \< 250K
-5.  Micropolitan
-6.  Noncore
-
-Can you query the database, extract the relevant information, and reproduce the following two graphs that look at the Case Fatality ratio (CFR) in different counties, according to their population?
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "cfr-county-population.png"), error = FALSE)
-```
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "cfr-rural-urban.png"), error = FALSE)
 ```
 
 # Money in US politics
@@ -776,42 +703,3 @@ write.csv(all_consulting_jobs, "all_consulting_jobs.csv", row.names = FALSE)
 
 
 ```
-
-# Create a shiny app - OPTIONAL
-
-We have already worked with the data on electricity production and usage, GDP/capita and CO2/capita since 1990. You have to create a simple Shiny app, where a user chooses a country from a drop down list and a time interval between 1990 and 2020 and shiny outputs the following
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "electricity-shiny.png"), error = FALSE)
-```
-
-You can use chatGPT to get the basic layout of Shiny app, but you need to adjust the code it gives you. Ask chatGPT to create the Shiny app using the `gapminder` data and make up similar requests for the inputs/outpus you are thinking of deploying.
-
-```{r}
-# As noted above this question is optional. I have thus not included a solution in this homework document. I do plan to create a shiny app and present this in another form. I found the following tutorial on line that may be helpful to learn what is required of this shiny app creation:
-# https://mastering-shiny.org/basic-app.html
-#
-
-```
-
-# Deliverables
-
-There is a lot of explanatory text, comments, etc. You do not need these, so delete them and produce a stand-alone document that you could share with someone. Knit the edited and completed R Markdown (Rmd) file as a Word or HTML document (use the "Knit" button at the top of the script editor window) and upload it to Canvas. You must be commiting and pushing your changes to your own Github repo as you go along.
-
-# Details
-
--   Who did you collaborate with: No-one although I asked the course professor a handful of questions once I felt that I was close with the final answer but was seemingly missing a small trick or there was a minor issue; or in one case, where I was totally stuck and needed freeing with a bit of code to understand the issue and catalyse me to propel forward.
--   Approximately how much time did you spend on this problem set: 2.5 days
--   What, if anything, gave you the most trouble: I found it hard to work out when to collect and, additionally, where specifically in the code one should place a collect(). I couldn't open the covid data on my laptop even when using arrow. Thus, I could not answer this question. I found it difficult to understand what exactly was being asked by the skywestminster questions; once I could comprehend the actual question, I could manage the coding, albeit I initially struggled with the group and ungroup tricks which are important in the earlier questions about this database. That said, I now feel that I understand the grouping and ungrouping concepts within a stream of code and so I have learnt well from this exercise on this account.
-
-**Please seek out help when you need it,** and remember the [15-minute rule](https://dsb2023.netlify.app/syllabus/#the-15-minute-rule){target="_blank"}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!
-
-> As a true test to yourself, do you understand the code you submitted and are you able to explain it to someone else?
-
-# Rubric
-
-13/13: Problem set is 100% completed. Every question was attempted and answered, and most answers are correct. Code is well-documented (both self-documented and with additional comments as necessary). Used tidyverse, instead of base R. Graphs and tables are properly labelled. Analysis is clear and easy to follow, either because graphs are labeled clearly or you've written additional text to describe how you interpret the output. Multiple Github commits. Work is exceptional. I will not assign these often.
-
-8/13: Problem set is 60--80% complete and most answers are correct. This is the expected level of performance. Solid effort. Hits all the elements. No clear mistakes. Easy to follow (both the code and the output). A few Github commits.
-
-5/13: Problem set is less than 60% complete and/or most answers are incorrect. This indicates that you need to improve next time. I will hopefully not assign these often. Displays minimal effort. Doesn't complete all components. Code is poorly written and not documented. Uses the same type of plot for each graph, or doesn't use plots appropriate for the variables being analyzed. No Github commits.
