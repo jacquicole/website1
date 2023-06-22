@@ -3,12 +3,12 @@ categories:
 - ""
 - ""
 date: "2017-10-31T21:28:43-05:00"
-description: databases et al
+description: Creating and Using Databases with R
 draft: false
-image: Rhubimage.jpg
+image: databases.jpg
 keywords: ""
 slug: bloge
-title: databases
+title: Databases
 ---
 
 ```{r}

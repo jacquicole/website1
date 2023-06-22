@@ -3,9 +3,10 @@ title: "Data Visualisation Exercise"
 date: "2023-06-21"
 description: Some great data visualisation exercises in R
 draft: no
-#image: machine-learning-image.jpg
+image: datavistile.jpg
 keywords: ''
-slug: blog3categories:
+slug: blog3
+categories:
 - ""
 - ""
 ---

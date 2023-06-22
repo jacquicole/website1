@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: "Benefits of R"
 draft: false
-#image: Rhubimage.jpg
+image: Rhubimage.jpg
 keywords: ""
 slug: blog1
 title: Code with R
