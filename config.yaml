@@ -96,7 +96,7 @@ params:
         url: blogs/blog3 # there's no blog3 anymore... 
       - image: analytics.jpg
         subtitle: Data Manipulation with R
-        title: Data Analytics Hub
+        title: Data Manipulation Hub
         url: blogs/blog4
       - image: databases.jpg
         subtitle: Databases and Webscraping with R
