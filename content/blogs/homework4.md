@@ -1054,26 +1054,52 @@ log_res <- log_wflow %>%
 ```
 
 ```
-## There were issues with some computations   A: x1
-```
+## 
+There were issues with some computations   A: x1
 
-```
-## → B | warning: prediction from a rank-deficient fit may be misleading
-```
-
-```
+                                                 
+→ B | warning: prediction from rank-deficient fit; attr(*, "non-estim") has doubtful cases
 ## There were issues with some computations   A: x1
+
+There were issues with some computations   A: x1   B: x1
+
 There were issues with some computations   A: x2   B: x1
-## There were issues with some computations   A: x3   B: x2
-## There were issues with some computations   A: x4   B: x3
-## There were issues with some computations   A: x5   B: x4
-## There were issues with some computations   A: x6   B: x5
-## There were issues with some computations   A: x6   B: x6
-## There were issues with some computations   A: x7   B: x6
-## There were issues with some computations   A: x8   B: x7
-## There were issues with some computations   A: x9   B: x8
-## There were issues with some computations   A: x10   B: x9
-## There were issues with some computations   A: x10   B: x10
+
+There were issues with some computations   A: x2   B: x2
+
+There were issues with some computations   A: x3   B: x2
+
+There were issues with some computations   A: x3   B: x3
+
+There were issues with some computations   A: x4   B: x3
+
+There were issues with some computations   A: x4   B: x4
+
+There were issues with some computations   A: x5   B: x4
+
+There were issues with some computations   A: x5   B: x5
+
+There were issues with some computations   A: x6   B: x5
+
+There were issues with some computations   A: x6   B: x6
+
+There were issues with some computations   A: x7   B: x6
+
+There were issues with some computations   A: x7   B: x7
+
+There were issues with some computations   A: x8   B: x7
+
+There were issues with some computations   A: x8   B: x8
+
+There were issues with some computations   A: x9   B: x8
+
+There were issues with some computations   A: x9   B: x9
+
+There were issues with some computations   A: x10   B: x9
+
+There were issues with some computations   A: x10   B: x10
+
+There were issues with some computations   A: x10   B: x10
 ```
 
 ```r
@@ -1215,14 +1241,14 @@ rf_res %>%  collect_metrics(summarize = TRUE)
 ## # A tibble: 8 × 6
 ##   .metric   .estimator  mean     n std_err .config             
 ##   <chr>     <chr>      <dbl> <int>   <dbl> <chr>               
-## 1 accuracy  binary     0.637    10  0.0139 Preprocessor1_Model1
-## 2 f_meas    binary     0.704    10  0.0115 Preprocessor1_Model1
-## 3 kap       binary     0.247    10  0.0291 Preprocessor1_Model1
-## 4 precision binary     0.643    10  0.0112 Preprocessor1_Model1
-## 5 recall    binary     0.778    10  0.0155 Preprocessor1_Model1
-## 6 roc_auc   binary     0.659    10  0.0216 Preprocessor1_Model1
-## 7 sens      binary     0.778    10  0.0155 Preprocessor1_Model1
-## 8 spec      binary     0.462    10  0.0221 Preprocessor1_Model1
+## 1 accuracy  binary     0.641    10  0.0141 Preprocessor1_Model1
+## 2 f_meas    binary     0.706    10  0.0112 Preprocessor1_Model1
+## 3 kap       binary     0.255    10  0.0296 Preprocessor1_Model1
+## 4 precision binary     0.647    10  0.0116 Preprocessor1_Model1
+## 5 recall    binary     0.778    10  0.0135 Preprocessor1_Model1
+## 6 roc_auc   binary     0.663    10  0.0225 Preprocessor1_Model1
+## 7 sens      binary     0.778    10  0.0135 Preprocessor1_Model1
+## 8 spec      binary     0.471    10  0.0215 Preprocessor1_Model1
 ```
 
 ```r
@@ -1275,8 +1301,10 @@ knn_res <-
 ## → A | warning: While computing binary `precision()`, no predicted events were detected (i.e. `true_positive + false_positive = 0`). 
 ##                Precision is undefined in this case, and `NA` will be returned.
 ##                Note that 61 true event(s) actually occured for the problematic event level, 'Fail'.
-## There were issues with some computations   A: x1
-## There were issues with some computations   A: x1
+## 
+There were issues with some computations   A: x1
+
+There were issues with some computations   A: x1
 ```
 
 ```r
